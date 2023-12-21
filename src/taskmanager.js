@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const taskmanager = () => {
+const Taskmanager = () => {
 
     const [tasks, setTasks] = useState([]);
     const [newtask, setnewtask] = useState('');
@@ -9,7 +9,7 @@ const taskmanager = () => {
 
     const handleAddTask = () => {
         if (newtask.trim() === '') return;
-        setTasks([...tasks, newTask]);
+        setTasks([...tasks, newtask]);
         setnewtask('');
     };
 
@@ -20,7 +20,7 @@ const taskmanager = () => {
 
     const handleSaveTask = (index) => {
         const updatedTasks = [...tasks];
-        updatedTasks[index] = editedTask;
+        updatedTasks[index] = edittask;
         setTasks(updatedTasks);
         setEdittask('');
         setEditIndex(-1);
@@ -46,7 +46,7 @@ const taskmanager = () => {
                         {editIndex === index ? (
                             <input
                                 type="text"
-                                value={editedTask}
+                                value={edittask}
                                 onChange={(e) => setEdittask(e.target.value)}
                             />
                         ) : (
@@ -66,7 +66,7 @@ const taskmanager = () => {
         </div>
 
     )
-    
+
 }
 
-export default taskmanager
+export default Taskmanager

@@ -1,11 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import taskmanager from './taskmanager';
+import React from 'react';
+import Taskmanager from './taskmanager';
 
 function App() {
   return (
     <div>
-      <taskmanager/>
+      <Taskmanager/>
   
     </div>
   );
